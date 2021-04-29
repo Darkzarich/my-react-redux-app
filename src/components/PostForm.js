@@ -7,14 +7,17 @@ const PostForm = ({ createPost }) => {
 
   const submitHandler = (event) => {
     event.preventDefault();
-    if (inputTitle.length) {
-      const newPost = {
-        title: inputTitle,
-        id: Date.now().toString(),
-      };
-      createPost(newPost);
-      setInputTitle('');
+
+    if (!inputTitle.trim()) {
+      return;
     }
+
+    const newPost = {
+      title: inputTitle,
+      id: Date.now().toString(),
+    };
+    createPost(newPost);
+    setInputTitle('');
   };
 
   const changeInputHandler = (event) => {
@@ -34,7 +37,7 @@ const PostForm = ({ createPost }) => {
         />
       </div>
       <button
-        disabled={!inputTitle.length}
+        disabled={!inputTitle.trim()}
         className="btn btn-success"
         type="submit"
       >
