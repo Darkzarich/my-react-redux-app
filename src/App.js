@@ -14,7 +14,7 @@ function App() {
       <div className="row">
         <div className="col">
           <h1>Posts</h1>
-          <Posts posts={[1, 2, 3]} />
+          <Posts />
         </div>
         <div className="col">
           <h1>FetchedPosts</h1>

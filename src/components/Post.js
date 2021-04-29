@@ -4,7 +4,9 @@ const Post = ({ post }) => {
   return (
     <div className="card mb-3">
       <div className="card-body">
-        <h2 className="card-title">Title here {post} </h2>
+        <div className="card-title">
+          <span className="text-muted small">[{post.id}]</span> {post.title}
+        </div>
       </div>
     </div>
   );

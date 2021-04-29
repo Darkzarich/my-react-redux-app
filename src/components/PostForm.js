@@ -1,6 +1,8 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { createPost } from '../redux/actions';
 
-const PostForm = () => {
+const PostForm = ({ createPost }) => {
   const [inputTitle, setInputTitle] = React.useState('');
 
   const submitHandler = (event) => {
@@ -9,6 +11,7 @@ const PostForm = () => {
       title: inputTitle,
       id: Date.now().toString(),
     };
+    createPost(newPost);
     setInputTitle('');
   };
 
@@ -35,4 +38,8 @@ const PostForm = () => {
   );
 };
 
-export default PostForm;
+const mapDispatchToProps = {
+  createPost,
+};
+
+export default connect(null, mapDispatchToProps)(PostForm);
