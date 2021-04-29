@@ -1,4 +1,3 @@
-import './App.css';
 import FetchedPosts from './components/FetchedPosts';
 import PostForm from './components/PostForm';
 import Posts from './components/Posts';
